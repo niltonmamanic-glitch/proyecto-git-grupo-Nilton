@@ -1,4 +1,4 @@
-# proyecto-git-grupo-Nilton
+# grupo-Nilton-----tienda virtual
 proyecto colaborativo de tienda digital desarrollado con HTML, CSS Y JAVACRIP
  Tienda Digital
 
