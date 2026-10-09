@@ -1,8 +1,9 @@
-# grupo-Nilton-----tienda virtual
+
+TIENDA DIGITAL OFICIAL
 proyecto colaborativo de tienda digital desarrollado con HTML, CSS Y JAVACRIP
  Tienda Digital
 
-Integrantes:
+Integrante:
 NILTON MAMANI CAUNA
 
 Práctica realizada mediante una simulación individual de trabajo colaborativo en GitHub.
