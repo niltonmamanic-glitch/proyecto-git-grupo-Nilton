@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NovaMarket: una tienda digital de demostración para practicar HTML, CSS, JavaScript, Git y GitHub en equipo.">
+  <title>NovaMarket | Tu tienda digital</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container topbar">
+      <a class="logo" href="#inicio" aria-label="NovaMarket, volver al inicio">
+        <span class="logo-symbol" aria-hidden="true">✦</span>
+        <span>Nova<span class="logo-accent">Market</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Menú principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#beneficios">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="cart-indicator" aria-label="Productos agregados al carrito">
+        <span aria-hidden="true">🛒</span>
+        <span>Carrito</span>
+        <output id="cantidad-carrito" aria-live="polite">0</output>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">TECNOLOGÍA A TU ALCANCE</p>
+          <h1 id="hero-title">Todo lo que necesitas para un mundo <span>más conectado.</span></h1>
+          <p class="hero-description">Explora accesorios y dispositivos para estudiar, trabajar y disfrutar cada día. Un proyecto académico hecho en equipo.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#productos">Explorar productos <span aria-hidden="true">→</span></a>
+            <a class="button button-outline" href="#beneficios">Conócenos</a>
+          </div>
+          <div class="hero-stat"><span class="stat-stars" aria-hidden="true">★★★★★</span> Diseño sencillo, rápido y adaptable</div>
+        </div>
+        <div class="hero-visual" aria-label="Ilustración decorativa de productos tecnológicos">
+          <div class="visual-ring ring-one"></div>
+          <div class="visual-ring ring-two"></div>
+          <div class="visual-product" aria-hidden="true">🎧</div>
+          <div class="floating-tag tag-top"><span aria-hidden="true">⚡</span> Innovación diaria</div>
+          <div class="floating-tag tag-bottom"><span aria-hidden="true">✓</span> Explora sin límites</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos" class="section products-section" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">NUESTRO CATÁLOGO</p>
+            <h2 id="products-title">Productos destacados</h2>
+            <p>Encuentra tecnología para cada momento.</p>
+          </div>
+          <div class="section-counter"><span id="contador-resultados">6</span> productos disponibles</div>
+        </div>
+
+        <div class="catalog-controls">
+          <label class="search-field" for="buscador">
+            <span aria-hidden="true">⌕</span>
+            <input id="buscador" type="search" placeholder="Buscar productos..." autocomplete="off">
+          </label>
+          <div class="filters" role="group" aria-label="Filtrar productos por categoría">
+            <button class="filter-button is-active" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+            <button class="filter-button" type="button" data-filtro="audio" aria-pressed="false">Audio</button>
+            <button class="filter-button" type="button" data-filtro="accesorios" aria-pressed="false">Accesorios</button>
+            <button class="filter-button" type="button" data-filtro="oficina" aria-pressed="false">Oficina</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="lista-productos">
+          <article class="product-card" data-nombre="Audífonos inalámbricos" data-categoria="audio">
+            <div class="product-image product-image-lilac"><span aria-hidden="true">🎧</span><span class="product-label">Popular</span></div>
+            <div class="product-content"><p class="product-category">Audio</p><h3>Audífonos inalámbricos</h3><p class="product-description">Comodidad y sonido para todos tus días.</p><div class="product-bottom"><strong>Bs 180</strong><button class="add-button" type="button" aria-label="Agregar audífonos inalámbricos al carrito">Agregar +</button></div></div>
+          </article>
+          <article class="product-card" data-nombre="Parlante Bluetooth" data-categoria="audio">
+            <div class="product-image product-image-blue"><span aria-hidden="true">🔊</span></div>
+            <div class="product-content"><p class="product-category">Audio</p><h3>Parlante Bluetooth</h3><p class="product-description">Lleva tu música a cualquier lugar.</p><div class="product-bottom"><strong>Bs 240</strong><button class="add-button" type="button" aria-label="Agregar parlante Bluetooth al carrito">Agregar +</button></div></div>
+          </article>
+          <article class="product-card" data-nombre="Mouse ergonómico" data-categoria="accesorios">
+            <div class="product-image product-image-mint"><span aria-hidden="true">🖱️</span><span class="product-label">Nuevo</span></div>
+            <div class="product-content"><p class="product-category">Accesorios</p><h3>Mouse ergonómico</h3><p class="product-description">Precisión y comodidad al trabajar.</p><div class="product-bottom"><strong>Bs 95</strong><button class="add-button" type="button" aria-label="Agregar mouse ergonómico al carrito">Agregar +</button></div></div>
+          </article>
+          <article class="product-card" data-nombre="Teclado compacto" data-categoria="oficina">
+            <div class="product-image product-image-peach"><span aria-hidden="true">⌨️</span></div>
+            <div class="product-content"><p class="product-category">Oficina</p><h3>Teclado compacto</h3><p class="product-description">Organiza mejor tu espacio de estudio.</p><div class="product-bottom"><strong>Bs 160</strong><button class="add-button" type="button" aria-label="Agregar teclado compacto al carrito">Agregar +</button></div></div>
+          </article>
+          <article class="product-card" data-nombre="Cámara web HD" data-categoria="oficina">
+            <div class="product-image product-image-blue"><span aria-hidden="true">📷</span></div>
+            <div class="product-content"><p class="product-category">Oficina</p><h3>Cámara web HD</h3><p class="product-description">Mejora la calidad de tus videollamadas.</p><div class="product-bottom"><strong>Bs 210</strong><button class="add-button" type="button" aria-label="Agregar cámara web HD al carrito">Agregar +</button></div></div>
+          </article>
+          <article class="product-card" data-nombre="Cargador rápido" data-categoria="accesorios">
+            <div class="product-image product-image-lilac"><span aria-hidden="true">🔌</span></div>
+            <div class="product-content"><p class="product-category">Accesorios</p><h3>Cargador rápido</h3><p class="product-description">Energía para seguir conectado.</p><div class="product-bottom"><strong>Bs 85</strong><button class="add-button" type="button" aria-label="Agregar cargador rápido al carrito">Agregar +</button></div></div>
+          </article>
+        </div>
+        <p id="sin-resultados" class="no-results" hidden>No encontramos productos con esa búsqueda. Prueba otra palabra.</p>
+      </div>
+    </section>
+
+    <section id="beneficios" class="section benefits-section" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-heading centered"><p class="eyebrow">SOBRE EL PROYECTO</p><h2 id="benefits-title">¿Por qué NovaMarket?</h2><p>Una experiencia clara, útil y creada con tecnología web.</p></div>
+        <div class="benefits-grid">
+          <article class="benefit-card"><div class="benefit-icon" aria-hidden="true">🚀</div><h3>Interfaz rápida</h3><p>Navega fácilmente y encuentra lo que buscas en segundos.</p></article>
+          <article class="benefit-card"><div class="benefit-icon" aria-hidden="true">📱</div><h3>Diseño adaptable</h3><p>Una página preparada para computadoras, tablets y celulares.</p></article>
+          <article class="benefit-card"><div class="benefit-icon" aria-hidden="true">🤝</div><h3>Trabajo en equipo</h3><p>Cada integrante aporta código mediante Git y GitHub.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section contact-section" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy"><p class="eyebrow">HABLEMOS</p><h2 id="contact-title">¿Tienes alguna consulta?</h2><p>Completa el formulario y comprueba cómo JavaScript valida los datos de entrada.</p><div class="demo-note">ℹ️ Formulario de demostración académica: no envía mensajes ni almacena datos.</div></div>
+        <form id="formulario-contacto" class="contact-form" novalidate>
+          <label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" minlength="3" maxlength="80" placeholder="Escribe tu nombre" autocomplete="name" required>
+          <label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" placeholder="ejemplo@correo.com" autocomplete="email" required>
+          <label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="4" minlength="10" maxlength="500" placeholder="¿En qué podemos ayudarte?" required></textarea>
+          <button type="submit" class="button button-primary form-submit">Validar mensaje <span aria-hidden="true">→</span></button>
+          <p id="respuesta-formulario" class="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><span class="logo footer-logo"><span class="logo-symbol" aria-hidden="true">✦</span> Nova<span class="logo-accent">Market</span></span><p>Proyecto académico de HTML, CSS, JavaScript, Git y GitHub.</p><a href="#inicio">Volver arriba ↑</a></div></footer>
+</body>
+</html>
